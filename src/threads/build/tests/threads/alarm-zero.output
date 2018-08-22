@@ -1,4 +1,4 @@
-Writing command line to /tmp/CmkHXJRNhc.dsk...
+Writing command line to /tmp/5Y96Kr6cDE.dsk...
 squish-pty bochs -q
 ========================================================================
                        Bochs x86 Emulator 2.5.1
@@ -13,15 +13,11 @@ Calibrating timer...  204,600 loops/s.
 Boot complete.
 Executing 'alarm-zero':
 (alarm-zero) begin
-Kernel PANIC at ../../threads/thread.c:269 in thread_block(): assertion `intr_get_level () == INTR_OFF' failed.
-Call stack: 0xc002fea8Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc01057cf
- cr2=0000010d error=00000000
- eax=0000010d ebx=0000010d ecx=c002fdd4 edx=000003d4
- esi=c010c516 edi=c010d4aa esp=c010e05f ebp=c002fe68
- cs=0008 ds=0010 es=0010 ss=fea8
-Kernel PANIC recursion at ../../threads/interrupt.c:374 in intr_handler().
-Timer: 26 ticks
-Thread: 0 idle ticks, 26 kernel ticks, 0 user ticks
-Console: 747 characters output
+(alarm-zero) PASS
+(alarm-zero) end
+Execution of 'alarm-zero' complete.
+Timer: 37 ticks
+Thread: 1 idle ticks, 39 kernel ticks, 0 user ticks
+Console: 381 characters output
 Keyboard: 0 keys pressed
 Powering off...

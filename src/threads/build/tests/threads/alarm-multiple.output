@@ -1,4 +1,4 @@
-Writing command line to /tmp/HqPdrwZNLv.dsk...
+Writing command line to /tmp/HrVGAvU486.dsk...
 squish-pty bochs -q
 ========================================================================
                        Bochs x86 Emulator 2.5.1
@@ -18,15 +18,45 @@ Executing 'alarm-multiple':
 (alarm-multiple) thread 1 sleeps 20 ticks each time, and so on.
 (alarm-multiple) If successful, product of iteration count and
 (alarm-multiple) sleep duration will appear in nondescending order.
-Kernel PANIC at ../../threads/thread.c:269 in thread_block(): assertion `intr_get_level () == INTR_OFF' failed.
-Call stack: 0xc0118f10Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc01057cf
- cr2=0000010d error=00000000
- eax=0000010d ebx=0000010d ecx=c0118e3c edx=000003d4
- esi=c010c516 edi=c010d4aa esp=c010e05f ebp=c0118ed0
- cs=0008 ds=0010 es=0010 ss=8f10
-Kernel PANIC recursion at ../../threads/interrupt.c:374 in intr_handler().
-Timer: 69 ticks
-Thread: 0 idle ticks, 69 kernel ticks, 0 user ticks
-Console: 1066 characters output
+(alarm-multiple) thread 0: duration=10, iteration=1, product=10
+(alarm-multiple) thread 1: duration=20, iteration=1, product=20
+(alarm-multiple) thread 0: duration=10, iteration=2, product=20
+(alarm-multiple) thread 2: duration=30, iteration=1, product=30
+(alarm-multiple) thread 0: duration=10, iteration=3, product=30
+(alarm-multiple) thread 3: duration=40, iteration=1, product=40
+(alarm-multiple) thread 1: duration=20, iteration=2, product=40
+(alarm-multiple) thread 0: duration=10, iteration=4, product=40
+(alarm-multiple) thread 4: duration=50, iteration=1, product=50
+(alarm-multiple) thread 0: duration=10, iteration=5, product=50
+(alarm-multiple) thread 2: duration=30, iteration=2, product=60
+(alarm-multiple) thread 1: duration=20, iteration=3, product=60
+(alarm-multiple) thread 0: duration=10, iteration=6, product=60
+(alarm-multiple) thread 0: duration=10, iteration=7, product=70
+(alarm-multiple) thread 3: duration=40, iteration=2, product=80
+(alarm-multiple) thread 1: duration=20, iteration=4, product=80
+(alarm-multiple) thread 2: duration=30, iteration=3, product=90
+(alarm-multiple) thread 4: duration=50, iteration=2, product=100
+(alarm-multiple) thread 1: duration=20, iteration=5, product=100
+(alarm-multiple) thread 3: duration=40, iteration=3, product=120
+(alarm-multiple) thread 2: duration=30, iteration=4, product=120
+(alarm-multiple) thread 1: duration=20, iteration=6, product=120
+(alarm-multiple) thread 1: duration=20, iteration=7, product=140
+(alarm-multiple) thread 4: duration=50, iteration=3, product=150
+(alarm-multiple) thread 2: duration=30, iteration=5, product=150
+(alarm-multiple) thread 3: duration=40, iteration=4, product=160
+(alarm-multiple) thread 2: duration=30, iteration=6, product=180
+(alarm-multiple) thread 4: duration=50, iteration=4, product=200
+(alarm-multiple) thread 3: duration=40, iteration=5, product=200
+(alarm-multiple) thread 2: duration=30, iteration=7, product=210
+(alarm-multiple) thread 3: duration=40, iteration=6, product=240
+(alarm-multiple) thread 4: duration=50, iteration=5, product=250
+(alarm-multiple) thread 3: duration=40, iteration=7, product=280
+(alarm-multiple) thread 4: duration=50, iteration=6, product=300
+(alarm-multiple) thread 4: duration=50, iteration=7, product=350
+(alarm-multiple) end
+Execution of 'alarm-multiple' complete.
+Timer: 928 ticks
+Thread: 549 idle ticks, 382 kernel ticks, 0 user ticks
+Console: 2952 characters output
 Keyboard: 0 keys pressed
 Powering off...

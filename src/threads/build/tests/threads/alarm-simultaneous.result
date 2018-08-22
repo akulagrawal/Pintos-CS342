@@ -1,5 +1,1 @@
-FAIL
-Kernel panic in run: PANIC at ../../threads/thread.c:269 in thread_block(): assertion `intr_get_level () == INTR_OFF' failed.
-Call stack: 0xc0117f20
-Translation of call stack:
-0xc0117f20: (unknown)
+PASS
