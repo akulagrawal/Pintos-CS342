@@ -386,14 +386,14 @@ thread_foreach (thread_action_func *func, void *aux)
 /* Sets the current thread's priority to NEW_PRIORITY. */
 void
 thread_set_priority (int new_priority) 
-{
+{	
   thread_current () -> priority = new_priority;
   
 	if(list_entry(list_head(&ready_list), struct thread, elem) -> priority > new_priority)
 	{
 		thread_yield();
 	}
-	
+  thread_check_priority();
 }
 
 /* Returns the current thread's priority. */
@@ -684,3 +684,20 @@ void thread_sleep(int64_t wakeup_at, int current_time)
 	
 	return;
 } 
+
+/* Check if the unblocked thread from sema has greater priority than the current running thread */
+void thread_check_priority(void)
+{
+  enum intr_level old_level = intr_disable();
+  
+  if(!list_empty(&ready_list))
+  {
+    struct list_elem * ready_head = list_front(&ready_list);
+    struct thread *th = list_entry(ready_head, struct thread, elem); 
+    if(th->priority > thread_current()->priority)
+    {
+      thread_yield();
+    }
+  }
+  intr_set_level(old_level);
+}
