@@ -107,6 +107,8 @@ timer_sleep (int64_t ticks)
 				// so that it is the first to be processed when it wakes
   thread_sleep(wakeup,start);	// Send current thread to the sleeper list
 
+  thread_wakeup_all(timer_ticks());  // wakes up all other threads having the same wakeup time.
+
   thread_restore();		// Restore the original priority of the thread
 }
 

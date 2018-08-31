@@ -253,6 +253,8 @@ thread_create (const char *name, int priority,
   /* Add to run queue. */
   thread_unblock (t);
 
+  thread_check_priority();  //T02 updates
+
   return tid;
 }
 
@@ -386,13 +388,13 @@ thread_foreach (thread_action_func *func, void *aux)
 /* Sets the current thread's priority to NEW_PRIORITY. */
 void
 thread_set_priority (int new_priority) 
-{	
+{
   thread_current () -> priority = new_priority;
   
-	if(list_entry(list_head(&ready_list), struct thread, elem) -> priority > new_priority)
-	{
-		thread_yield();
-	}
+	 if(list_entry(list_head(&ready_list), struct thread, elem) -> priority > new_priority)
+	 {
+	 	thread_yield();
+	 }
   thread_check_priority();
 }
 
@@ -649,10 +651,11 @@ void thread_restore()
   thread_set_priority(thread_current() -> orig_priority);
 }
 
+/* making the current thread go to sleep and updating it's wakeup time*/
 void thread_sleep(int64_t wakeup_at, int current_time)	
 {
 	
-	/*  Modifications Here - locks   */
+	//  Modifications Here - locks
 	
 	
 	// too late to sleep
@@ -683,7 +686,7 @@ void thread_sleep(int64_t wakeup_at, int current_time)
 	intr_set_level(old_int);
 	
 	return;
-} 
+}
 
 /* Check if the unblocked thread from sema has greater priority than the current running thread */
 void thread_check_priority(void)
@@ -700,4 +703,20 @@ void thread_check_priority(void)
     }
   }
   intr_set_level(old_level);
+}
+
+/* wakes up the next sleeping thread if it's wakeup time is same as the current running thread.*/
+void thread_wakeup_all(int64_t curTick)
+{
+  if(!list_empty(&sleeper_list)) // sleeper list is not empty
+  {
+    struct thread *th = list_entry(list_begin(&sleeper_list),struct thread,elem);
+
+    if(th->wakeup_at <= curTick)
+    {
+      list_pop_front(&sleeper_list);
+      thread_unblock(th);
+    }
+  }
+  return;
 }

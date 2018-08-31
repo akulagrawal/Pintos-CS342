@@ -109,6 +109,9 @@ struct thread
    Controlled by kernel command-line option "-o mlfqs". */
 extern bool thread_mlfqs;
 
+void thread_check_priority(void); // T02 task 2
+void thread_wakeup_all(int64_t);  // T02 task 2
+
 void thread_init (void);
 void thread_start (void);
 
