@@ -1,4 +1,4 @@
-Writing command line to /tmp/NXEe0dUWR3.dsk...
+Writing command line to /tmp/104Qqz6eX7.dsk...
 squish-pty bochs -q
 ========================================================================
                        Bochs x86 Emulator 2.5.1
@@ -8,7 +8,7 @@ squish-pty bochs -q
 Kernel command line: -q -mlfqs run mlfqs-load-avg
 Pintos booting with 4,096 kB RAM...
 374 pages available in kernel pool.
-374 pages available in user pool.
+373 pages available in user pool.
 Calibrating timer...  204,600 loops/s.
 Boot complete.
 Executing 'mlfqs-load-avg':
@@ -24,23 +24,15 @@ Executing 'mlfqs-load-avg':
 (mlfqs-load-avg) After 12 seconds, load average=0.00.
 (mlfqs-load-avg) After 14 seconds, load average=0.00.
 (mlfqs-load-avg) After 16 seconds, load average=0.00.
-(mlfqs-load-avg) After 18 seconds, load average=0.00.
-(mlfqs-load-avg) After 20 seconds, load average=0.00.
-(mlfqs-load-avg) After 22 seconds, load average=0.00.
-(mlfqs-load-avg) After 24 seconds, load average=0.00.
-(mlfqs-load-avg) After 26 seconds, load average=0.00.
-(mlfqs-load-avg) After 28 seconds, load average=0.00.
-(mlfqs-load-avg) After 30 seconds, load average=0.00.
-(mlfqs-load-avg) After 32 seconds, load average=0.00.
 Kernel PANIC at ../../threads/thread.c:293 in thread_unblock(): assertion `t->status == THREAD_BLOCKED' failed.
-Call stack: 0xc011ae94Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc010592f
+Call stack: 0xc0120eb4Interrupt 0x0e (#PF Page-Fault Exception) at eip=0xc0105bcf
  cr2=00000125 error=00000000
- eax=00000125 ebx=00000125 ecx=c011adc0 edx=000003d4
- esi=c010c667 edi=c010d60a esp=c010e1bf ebp=c011ae54
- cs=0008 ds=0010 es=0010 ss=ae94
+ eax=00000125 ebx=00000125 ecx=c0120de0 edx=000003d4
+ esi=c010c907 edi=c010d8aa esp=c010e493 ebp=c0120e74
+ cs=0008 ds=0010 es=0010 ss=0eb4
 Kernel PANIC recursion at ../../threads/interrupt.c:374 in intr_handler().
-Timer: 4427 ticks
-Thread: 828 idle ticks, 3599 kernel ticks, 0 user ticks
-Console: 1780 characters output
+Timer: 2826 ticks
+Thread: 816 idle ticks, 2010 kernel ticks, 0 user ticks
+Console: 1348 characters output
 Keyboard: 0 keys pressed
 Powering off...

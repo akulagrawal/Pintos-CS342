@@ -90,10 +90,16 @@ struct thread
     int orig_priority;                  /*original priority*/
     int64_t wakeup_at;                  /*wakeup time*/
     int priority;                       /* Priority. */
+    // int donation_benefit;               /*donation priority*/
+    int initial_priority;                  /* Original Priority before donation (locks).  */
     struct list_elem allelem;           /* List element for all threads list. */
 
     /* Shared between thread.c and synch.c. */
     struct list_elem elem;              /* List element. */
+
+    struct list locks_acquired;         /*All locks acquired currently by the thread*/
+    struct lock *lock_seeking;               /* the lock, thread is seeking*/
+
 
 #ifdef USERPROG
     /* Owned by userprog/process.c. */
@@ -147,4 +153,10 @@ int thread_get_load_avg (void);
 void thread_set_temporarily_up(void);
 void thread_sleep(int64_t,int);
 void thread_restore(void);
+void update_ready_list(void);
+
+void thread_add_lock (struct lock *);
+void thread_remove_lock (struct lock *);
+void thread_donate_priority (struct thread *);
+void thread_update_priority (struct thread *);
 #endif /* threads/thread.h */
