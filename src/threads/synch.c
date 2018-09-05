@@ -230,49 +230,48 @@ lock_init (struct lock *lock)
 void
 lock_acquire (struct lock *lock)
 {
-  
-  enum intr_level old_level;
-  struct thread *t = thread_current();
-  struct lock *l;
-  
   ASSERT (lock != NULL);
   ASSERT (!intr_context());
 
   //lock already acquired by the running thread
   ASSERT (!lock_held_by_current_thread(lock));
 
-  if (lock->holder != NULL)
+  struct thread *t = thread_current();
+  struct lock *curr_lock;
+  
+  if(lock->holder != NULL)
   {
     t->lock_seeking = lock;
-    l = lock;
+    curr_lock = lock;
 
     /* Do nested priority donation. */
     //l->priority = highest priority among the threads seeking it
     //but not holding it
-    while (l && t->priority > l->priority )
+    while(curr_lock != NULL && t->priority > curr_lock->priority)
     {
       //Sort semaphore according to thread priority.
-      update_sema_list(&(l->semaphore));
-      l->priority = t->priority;
-      thread_donate_priority (l->holder);
-      l = l->holder->lock_seeking;
+      update_sema_list(&(curr_lock->semaphore));
+      curr_lock->priority = t->priority;
+      thread_donate_priority(curr_lock->holder);
+      curr_lock = curr_lock->holder->lock_seeking;
     }
   }
 
   //Attempt to enter into critical section.
-  sema_down (&lock->semaphore);
+  sema_down(&lock->semaphore);
 
-  old_level = intr_disable ();
+  enum intr_level old_level;
+  old_level = intr_disable();
   
-  t = thread_current (); 
+  t = thread_current(); 
   t->lock_seeking = NULL;
 
   lock->priority = t->priority;
   //Add lock to thread's list of acquired locks
-  thread_add_lock (lock);
+  thread_add_lock(lock);
   lock->holder = t; 
 
-  intr_set_level (old_level); 
+  intr_set_level(old_level); 
 }
 
 /* Tries to acquires LOCK and returns true if successful or false
