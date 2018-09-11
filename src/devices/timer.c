@@ -103,13 +103,10 @@ timer_sleep (int64_t ticks)
   ASSERT (intr_get_level () == INTR_ON);
   
 
-  thread_set_temporarily_up();	// Set the priority of the current thread to MAX before sending it to sleeper list
+  //thread_set_temporarily_up();	// Set the priority of the current thread to MAX before sending it to sleeper list
 				// so that it is the first to be processed when it wakes
   thread_sleep(wakeup,start);	// Send current thread to the sleeper list
-
-  thread_wakeup_all(timer_ticks());  // wakes up all other threads having the same wakeup time.
-
-  thread_restore();		// Restore the original priority of the thread
+	//thread_restore();		// Restore the original priority of the thread
 }
 
 /* Sleeps for approximately MS milliseconds.  Interrupts must be

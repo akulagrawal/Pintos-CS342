@@ -1,5 +1,5 @@
 FAIL
-Kernel panic in run: PANIC at ../../threads/thread.c:293 in thread_unblock(): assertion `t->status == THREAD_BLOCKED' failed.
-Call stack: 0xc0120eb4
+Kernel panic in run: PANIC at ../../lib/kernel/list.c:84 in list_next(): assertion `is_head (elem) || is_interior (elem)' failed.
+Call stack: 0xc012ff00
 Translation of call stack:
-0xc0120eb4: (unknown)
+0xc012ff00: (unknown)

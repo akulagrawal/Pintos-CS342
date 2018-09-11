@@ -24,6 +24,11 @@ typedef int tid_t;
 #define PRI_DEFAULT 31                  /* Default priority. */
 #define PRI_MAX 63                      /* Highest priority. */
 
+/* Thread niceness. */
+#define NICE_MIN -20                    /* Lowest niceness. */
+#define NICE_DEFAULT 0                  /* Default niceness. */
+#define NICE_MAX 20                     /* Highest niceness. */
+
 /* A kernel thread or user process.
 
    Each thread structure is stored in its own 4 kB page.  The
@@ -87,13 +92,20 @@ struct thread
     enum thread_status status;          /* Thread state. */
     char name[16];                      /* Name (for debugging purposes). */
     uint8_t *stack;                     /* Saved stack pointer. */
-    int orig_priority;                  /*original priority*/
-    int64_t wakeup_at;                  /*wakeup time*/
+    int orig_priority;                  /* Original priority */
+    int64_t wakeup_at;                  /* Wakeup time */
     int priority;                       /* Priority. */
+    int recent_cpu;											/* Recent_cpu for the MLFQS scheduler. */
+    int initial_priority;               /* Original Priority before donation (locks).  */
     struct list_elem allelem;           /* List element for all threads list. */
-
+    int niceness;
+		
     /* Shared between thread.c and synch.c. */
     struct list_elem elem;              /* List element. */
+
+    struct list locks_acquired;         /* All locks acquired currently by the thread*/
+    struct lock * lock_seeking;         /* Pointer to the lock, which thread is seeking*/
+
 
 #ifdef USERPROG
     /* Owned by userprog/process.c. */
@@ -108,6 +120,9 @@ struct thread
    If true, use multi-level feedback queue scheduler.
    Controlled by kernel command-line option "-o mlfqs". */
 extern bool thread_mlfqs;
+
+void thread_check_priority(void); // T02 task 2
+void thread_wakeup_all(int64_t);  // T02 task 2
 
 void thread_init (void);
 void thread_start (void);
@@ -136,6 +151,7 @@ void thread_foreach (thread_action_func *, void *);
 
 int thread_get_priority (void);
 void thread_set_priority (int);
+int compute_priority (int);
 
 int thread_get_nice (void);
 void thread_set_nice (int);
@@ -144,4 +160,20 @@ int thread_get_load_avg (void);
 void thread_set_temporarily_up(void);
 void thread_sleep(int64_t,int);
 void thread_restore(void);
+void update_ready_list(void);
+
+/* comparator */
+bool th_before2(const struct list_elem *, const struct list_elem *, void *aux UNUSED);
+
+/* Utilities for 4.4BSD Scheduler. */
+void mlfqs_priority (struct thread *t);
+void mlfqs_recent_cpu (struct thread *t);
+void mlfqs_load_avg (void);
+void mlfqs_recalculate (void);
+void mlfqs_increment (void);
+
+void thread_add_lock (struct lock *);
+void thread_remove_lock (struct lock *);
+void thread_donate_priority (struct thread *);
+void thread_update_priority (struct thread *);
 #endif /* threads/thread.h */
