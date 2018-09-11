@@ -141,7 +141,7 @@ sema_up (struct semaphore *sema)
   }
 
   sema->value++;
-  thread_check_priority();                  /*the thread just unblocked might have highest priority and so should be yielded*/
+  thread_check_prio();                  /*the thread just unblocked might have highest priority and so should be yielded*/
   intr_set_level (old_level);
 }
 

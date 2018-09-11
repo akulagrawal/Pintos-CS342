@@ -1,4 +1,4 @@
-Writing command line to /tmp/hLSM1ZIE9G.dsk...
+Writing command line to /tmp/NRC0QO4qtu.dsk...
 squish-pty bochs -q
 ========================================================================
                        Bochs x86 Emulator 2.5.1
@@ -55,8 +55,8 @@ Executing 'alarm-multiple':
 (alarm-multiple) thread 4: duration=50, iteration=7, product=350
 (alarm-multiple) end
 Execution of 'alarm-multiple' complete.
-Timer: 946 ticks
-Thread: 546 idle ticks, 403 kernel ticks, 0 user ticks
+Timer: 947 ticks
+Thread: 550 idle ticks, 400 kernel ticks, 0 user ticks
 Console: 2952 characters output
 Keyboard: 0 keys pressed
 Powering off...

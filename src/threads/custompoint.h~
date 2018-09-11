@@ -44,6 +44,12 @@ subtract_from_float_int(int fl, int n)
 }
 
 int
+subtract_from_float_float(int fl1, int fl2)
+{
+	 	return fl1 - fl2;
+}
+
+int
 multiply_float_int(int fl, int n)
 {
 	 	return fl * n;
@@ -58,12 +64,12 @@ divide_float_by_int(int fl, int n)
 int
 multiply_float_float(int fl1, int fl2)
 {
-	 	return ((int64_t) fl1) * fl2 / f;
+	 	return (((int64_t) fl1) * fl2) / f;
 }
 
 int
 divide_float_by_float(int fl1, int fl2)
 {
-	 	return ((int64_t) fl1) * f / fl2;
+	 	return (((int64_t) fl1) * f) / fl2;
 }
 

@@ -1,69 +1,78 @@
 /* Assume that x and y are fixed-point numbers, and n is an integer. */
 /* Fixed point numbers are in signed p : q format, where p + q = 31, and f is 1 << q. */
-/* As in B.6 Fixed-Point Real Arithmetic, we assume p = 17, q = 14 here. */
+/* We assume p = 17, q = 14 here. */
 
 #define f (1 << 14)
 #define INT_MAX ((1 << 31) - 1)
 #define INT_MIN (-(1 << 31))
 
-/* Ameya's code below because he can't stand functions such as add_x_and_y */
-/* Most of the underlying code is the same though. Lol. */
-/* Remember floats are always the first argument! */
+/* Ameya's code below. */
 
 int 
-to_float(int n)
+to_float (int n)
 {
-	return n * f;
+  return n * f;
 }
 
 int 
-round_to_zero (int fl)
+round_to_zero (int x)
 {
-	return fl / f;
+  return x / f;
 }
 
-int
-round_to_nearest (int fl)
+int 
+round_to_nearest (int x)
 {
-	 if (fl >= 0)
-    return (fl + f / 2) / f;
+  if (x >= 0)
+    return (x + f / 2) / f;
   else	
-    return (fl - f / 2) / f;
+    return (x - f / 2) / f;
 }
 
-int
-add_float_int(int fl, int n)
+int 
+add_float_float (int x, int y)
 {
-	 	return fl + n * f;
+  return x + y;
 }
 
-int
-subtract_from_float_int(int fl, int n)
+int 
+subtract_from_float_float (int x, int y)
 {
-	 	return fl - n * f;
+  return x - y;
 }
 
-int
-multiply_float_int(int fl, int n)
+int 
+add_float_int (int x, int n)
 {
-	 	return fl * n;
+  return x + n * f;	
 }
 
-int
-divide_float_by_int(int fl, int n)
+int 
+subtract_from_float_int (int x, int n)
 {
-	 	return fl / n;
+  return x - n * f; 
 }
 
-int
-multiply_float_float(int fl1, int fl2)
+int 
+multiply_float_float (int x, int y)
 {
-	 	return (((int64_t) fl1) * fl2) / f;
+  return ((int64_t)x) * y / f;
 }
 
-int
-divide_float_by_float(int fl1, int fl2)
+int 
+multiply_float_int (int x, int y)
 {
-	 	return (((int64_t) fl1) * f) / fl2;
+  return x * y;
 }
 
+int 
+divide_float_by_float (int x, int y)
+{
+  return ((int64_t)x) * f / y;	
+}
+
+int 
+divide_float_by_int (int x, int y)
+{
+  return x / y;
+}
