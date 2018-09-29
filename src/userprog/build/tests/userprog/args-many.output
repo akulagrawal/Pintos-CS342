@@ -1,0 +1,57 @@
+Copying tests/userprog/args-many to scratch partition...
+Writing command line to /tmp/hyF3vYYWZu.dsk...
+squish-pty bochs -q
+========================================================================
+                       Bochs x86 Emulator 2.5.1
+              Built from SVN snapshot on January 6, 2012
+                  Compiled on Oct 10 2012 at 11:12:02
+========================================================================
+Kernel command line: -q -f extract run 'args-many a b c d e f g h i j k l m n o p q r s t u v'
+Pintos booting with 4,096 kB RAM...
+374 pages available in kernel pool.
+373 pages available in user pool.
+Calibrating timer...  204,600 loops/s.
+hd0:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00011"
+hd0:1: detected 4,032 sector (1 MB) disk, model "Generic 1234", serial "BXHD00012"
+hd1:0: detected 1,008 sector (504 kB) disk, model "Generic 1234", serial "BXHD00021"
+Formatting file system...done.
+Boot complete.
+Extracting ustar archive from scratch disk into file system...
+Putting 'args-many' into the file system...
+Erasing ustar archive...
+Executing 'args-many a b c d e f g h i j k l m n o p q r s t u v':
+                                                                                                                         ARGC:23 ARGV:bfffff68
+Argv[0] = bffffff6 pointing at args-many
+Argv[1] = bffffff4 pointing at a
+Argv[2] = bffffff2 pointing at b
+Argv[3] = bffffff0 pointing at c
+Argv[4] = bfffffee pointing at d
+Argv[5] = bfffffec pointing at e
+Argv[6] = bfffffea pointing at f
+Argv[7] = bfffffe8 pointing at g
+Argv[8] = bfffffe6 pointing at h
+Argv[9] = bfffffe4 pointing at i
+Argv[10] = bfffffe2 pointing at j
+Argv[11] = bfffffe0 pointing at k
+Argv[12] = bfffffde pointing at l
+Argv[13] = bfffffdc pointing at m
+Argv[14] = bfffffda pointing at n
+Argv[15] = bfffffd8 pointing at o
+Argv[16] = bfffffd6 pointing at p
+Argv[17] = bfffffd4 pointing at q
+Argv[18] = bfffffd2 pointing at r
+Argv[19] = bfffffd0 pointing at s
+Argv[20] = bfffffce pointing at t
+Argv[21] = bfffffcc pointing at u
+Argv[22] = bfffffca pointing at v
+                                                                                                           system call!
+                                                                                                                                                                                                                                                                                Execution of 'args-many' complete.
+Timer: 575 ticks
+Thread: 30 idle ticks, 395 kernel ticks, 153 user ticks
+hd0:0: 0 reads, 0 writes
+hd0:1: 59 reads, 196 writes
+hd1:0: 95 reads, 2 writes
+Console: 2240 characters output
+Keyboard: 0 keys pressed
+Exception: 0 page faults
+Powering off...

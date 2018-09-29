@@ -948,7 +948,7 @@ mlfqs_priority (struct thread *t)
 void 
 mlfqs_recalculate (void)
 {
-	// Iterate through all_list
+  // Iterate through all_list
   struct list_elem *e;
   for (e = list_begin (&all_list); e != list_end (&all_list); e = list_next (e))
     {

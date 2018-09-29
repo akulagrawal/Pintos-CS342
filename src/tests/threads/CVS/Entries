@@ -22,7 +22,7 @@
 /mlfqs-fair.c/1.1.1.1/Thu Aug  9 06:20:55 2018//
 /mlfqs-load-1.c/1.1.1.1/Thu Aug  9 06:20:55 2018//
 /mlfqs-load-1.ck/1.1.1.1/Thu Aug  9 06:20:55 2018//
-/mlfqs-load-60.c/1.1.1.1/Thu Aug  9 06:20:55 2018//
+/mlfqs-load-60.c/1.2/Wed Sep 12 17:51:45 2018//
 /mlfqs-load-60.ck/1.1.1.1/Thu Aug  9 06:20:55 2018//
 /mlfqs-load-avg.c/1.1.1.1/Thu Aug  9 06:20:55 2018//
 /mlfqs-load-avg.ck/1.1.1.1/Thu Aug  9 06:20:55 2018//
@@ -55,6 +55,6 @@
 /priority-preempt.ck/1.1.1.1/Thu Aug  9 06:20:55 2018//
 /priority-sema.c/1.1.1.1/Thu Aug  9 06:20:55 2018//
 /priority-sema.ck/1.1.1.1/Thu Aug  9 06:20:55 2018//
-/tests.c/1.1.1.1/Thu Aug  9 06:20:55 2018//
+/tests.c/1.2/Wed Sep 12 17:51:45 2018//
 /tests.h/1.1.1.1/Thu Aug  9 06:20:55 2018//
 D
