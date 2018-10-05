@@ -1,5 +1,5 @@
 Copying tests/userprog/args-none to scratch partition...
-Writing command line to /tmp/GZx9mtiNRd.dsk...
+Writing command line to /tmp/bPRn5awfoA.dsk...
 squish-pty bochs -q
 ========================================================================
                        Bochs x86 Emulator 2.5.1
@@ -20,16 +20,19 @@ Extracting ustar archive from scratch disk into file system...
 Putting 'args-none' into the file system...
 Erasing ustar archive...
 Executing 'args-none':
-                                                                                                                                                                                                                      ARGC:1 ARGV:bfffffec
-Argv[0] = bffffff6 pointing at args-none
-                                                                                                                           system call!
-                                                                                                                                                                   Execution of 'args-none' complete.
-Timer: 458 ticks
-Thread: 30 idle ticks, 392 kernel ticks, 39 user ticks
+(args) begin
+(args) argc = 1
+(args) argv[0] = 'args-none'
+(args) argv[1] = null
+(args) end
+args-none: exit(0)
+Execution of 'args-none' complete.
+Timer: 362 ticks
+Thread: 30 idle ticks, 286 kernel ticks, 49 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 59 reads, 196 writes
 hd1:0: 95 reads, 2 writes
-Console: 1409 characters output
+Console: 944 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

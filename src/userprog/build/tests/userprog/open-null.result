@@ -1,2 +1,17 @@
 FAIL
-Run started 'open-null' but it never finished
+Test output failed to match any acceptable form.
+
+Acceptable output:
+  (open-null) begin
+  (open-null) end
+  open-null: exit(0)
+Differences in `diff -u' format:
+  (open-null) begin
+- (open-null) end
+- open-null: exit(0)
+Acceptable output:
+  (open-null) begin
+  open-null: exit(-1)
+Differences in `diff -u' format:
+  (open-null) begin
+- open-null: exit(-1)

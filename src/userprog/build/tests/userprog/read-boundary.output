@@ -1,6 +1,6 @@
 Copying tests/userprog/read-boundary to scratch partition...
 Copying ../../tests/userprog/sample.txt to scratch partition...
-Writing command line to /tmp/otlJEZHKaK.dsk...
+Writing command line to /tmp/7nkuCZrJy4.dsk...
 squish-pty bochs -q
 ========================================================================
                        Bochs x86 Emulator 2.5.1
@@ -22,16 +22,15 @@ Putting 'read-boundary' into the file system...
 Putting 'sample.txt' into the file system...
 Erasing ustar archive...
 Executing 'read-boundary':
-                                                                                                                                                                                                                                            ARGC:1 ARGV:bfffffe8
-Argv[0] = bffffff2 pointing at read-boundary
-                                                                                         system call!
-                                                                                                                                                                               Execution of 'read-boundary' complete.
-Timer: 508 ticks
-Thread: 30 idle ticks, 435 kernel ticks, 46 user ticks
+(read-boundary) begin
+(read-boundary) open "sample.txt"
+Execution of 'read-boundary' complete.
+Timer: 390 ticks
+Thread: 30 idle ticks, 322 kernel ticks, 41 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 94 reads, 212 writes
 hd1:0: 102 reads, 2 writes
-Console: 1475 characters output
+Console: 952 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

@@ -1,5 +1,5 @@
 Copying tests/userprog/args-many to scratch partition...
-Writing command line to /tmp/hyF3vYYWZu.dsk...
+Writing command line to /tmp/rPiiCqDvLQ.dsk...
 squish-pty bochs -q
 ========================================================================
                        Bochs x86 Emulator 2.5.1
@@ -20,38 +20,41 @@ Extracting ustar archive from scratch disk into file system...
 Putting 'args-many' into the file system...
 Erasing ustar archive...
 Executing 'args-many a b c d e f g h i j k l m n o p q r s t u v':
-                                                                                                                         ARGC:23 ARGV:bfffff68
-Argv[0] = bffffff6 pointing at args-many
-Argv[1] = bffffff4 pointing at a
-Argv[2] = bffffff2 pointing at b
-Argv[3] = bffffff0 pointing at c
-Argv[4] = bfffffee pointing at d
-Argv[5] = bfffffec pointing at e
-Argv[6] = bfffffea pointing at f
-Argv[7] = bfffffe8 pointing at g
-Argv[8] = bfffffe6 pointing at h
-Argv[9] = bfffffe4 pointing at i
-Argv[10] = bfffffe2 pointing at j
-Argv[11] = bfffffe0 pointing at k
-Argv[12] = bfffffde pointing at l
-Argv[13] = bfffffdc pointing at m
-Argv[14] = bfffffda pointing at n
-Argv[15] = bfffffd8 pointing at o
-Argv[16] = bfffffd6 pointing at p
-Argv[17] = bfffffd4 pointing at q
-Argv[18] = bfffffd2 pointing at r
-Argv[19] = bfffffd0 pointing at s
-Argv[20] = bfffffce pointing at t
-Argv[21] = bfffffcc pointing at u
-Argv[22] = bfffffca pointing at v
-                                                                                                           system call!
-                                                                                                                                                                                                                                                                                Execution of 'args-many' complete.
-Timer: 575 ticks
-Thread: 30 idle ticks, 395 kernel ticks, 153 user ticks
+(args) begin
+(args) argc = 23
+(args) argv[0] = 'args-many'
+(args) argv[1] = 'a'
+(args) argv[2] = 'b'
+(args) argv[3] = 'c'
+(args) argv[4] = 'd'
+(args) argv[5] = 'e'
+(args) argv[6] = 'f'
+(args) argv[7] = 'g'
+(args) argv[8] = 'h'
+(args) argv[9] = 'i'
+(args) argv[10] = 'j'
+(args) argv[11] = 'k'
+(args) argv[12] = 'l'
+(args) argv[13] = 'm'
+(args) argv[14] = 'n'
+(args) argv[15] = 'o'
+(args) argv[16] = 'p'
+(args) argv[17] = 'q'
+(args) argv[18] = 'r'
+(args) argv[19] = 's'
+(args) argv[20] = 't'
+(args) argv[21] = 'u'
+(args) argv[22] = 'v'
+(args) argv[23] = null
+(args) end
+args-many: exit(0)
+Execution of 'args-many a b c d e f g h i j k l m n o p q r s t u v' complete.
+Timer: 487 ticks
+Thread: 30 idle ticks, 297 kernel ticks, 163 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 59 reads, 196 writes
 hd1:0: 95 reads, 2 writes
-Console: 2240 characters output
+Console: 1556 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

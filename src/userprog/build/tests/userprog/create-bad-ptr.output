@@ -1,5 +1,5 @@
 Copying tests/userprog/create-bad-ptr to scratch partition...
-Writing command line to /tmp/ClAI3LMxK5.dsk...
+Writing command line to /tmp/QttSloxxwN.dsk...
 squish-pty bochs -q
 ========================================================================
                        Bochs x86 Emulator 2.5.1
@@ -20,16 +20,14 @@ Extracting ustar archive from scratch disk into file system...
 Putting 'create-bad-ptr' into the file system...
 Erasing ustar archive...
 Executing 'create-bad-ptr':
-                                                                                                                   ARGC:1 ARGV:bfffffe8
-Argv[0] = bffffff1 pointing at create-bad-ptr
-                                                             system call!
-                                                                                                                                                                                                                                                                                                                                    Execution of 'create-bad-ptr' complete.
-Timer: 459 ticks
-Thread: 30 idle ticks, 393 kernel ticks, 39 user ticks
+(create-bad-ptr) begin
+Execution of 'create-bad-ptr' complete.
+Timer: 345 ticks
+Thread: 30 idle ticks, 289 kernel ticks, 29 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 59 reads, 198 writes
 hd1:0: 96 reads, 2 writes
-Console: 1434 characters output
+Console: 877 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

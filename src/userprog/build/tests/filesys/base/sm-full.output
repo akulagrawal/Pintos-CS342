@@ -1,5 +1,5 @@
 Copying tests/filesys/base/sm-full to scratch partition...
-Writing command line to /tmp/DqS4HIF46S.dsk...
+Writing command line to /tmp/hTyke0S2zZ.dsk...
 squish-pty bochs -q
 ========================================================================
                        Bochs x86 Emulator 2.5.1
@@ -20,16 +20,15 @@ Extracting ustar archive from scratch disk into file system...
 Putting 'sm-full' into the file system...
 Erasing ustar archive...
 Executing 'sm-full':
-                                                                                                                                 ARGC:1 ARGV:bffffff0
-Argv[0] = bffffff8 pointing at sm-full
-                                                                                            system call!
-                                                                                                                                                                                                                                                                                       Execution of 'sm-full' complete.
-Timer: 464 ticks
-Thread: 30 idle ticks, 396 kernel ticks, 42 user ticks
+(sm-full) begin
+(sm-full) create "quux"
+Execution of 'sm-full' complete.
+Timer: 368 ticks
+Thread: 30 idle ticks, 292 kernel ticks, 49 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 60 reads, 206 writes
 hd1:0: 100 reads, 2 writes
-Console: 1400 characters output
+Console: 867 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

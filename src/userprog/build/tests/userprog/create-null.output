@@ -1,5 +1,5 @@
 Copying tests/userprog/create-null to scratch partition...
-Writing command line to /tmp/MG4t87cgsX.dsk...
+Writing command line to /tmp/3W0jZ1Ct4D.dsk...
 squish-pty bochs -q
 ========================================================================
                        Bochs x86 Emulator 2.5.1
@@ -20,16 +20,14 @@ Extracting ustar archive from scratch disk into file system...
 Putting 'create-null' into the file system...
 Erasing ustar archive...
 Executing 'create-null':
-                                                                                                       ARGC:1 ARGV:bfffffec
-Argv[0] = bffffff4 pointing at create-null
-system call!
-                                                                                                                                                                                                                                                                                                                                                                                                             Execution of 'create-null' complete.
-Timer: 457 ticks
-Thread: 30 idle ticks, 390 kernel ticks, 40 user ticks
+(create-null) begin
+Execution of 'create-null' complete.
+Timer: 343 ticks
+Thread: 30 idle ticks, 287 kernel ticks, 29 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 59 reads, 198 writes
 hd1:0: 96 reads, 2 writes
-Console: 1419 characters output
+Console: 862 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

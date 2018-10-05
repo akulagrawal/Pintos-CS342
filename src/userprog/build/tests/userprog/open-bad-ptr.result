@@ -1,2 +1,17 @@
 FAIL
-Run started 'open-bad-ptr' but it never finished
+Test output failed to match any acceptable form.
+
+Acceptable output:
+  (open-bad-ptr) begin
+  (open-bad-ptr) end
+  open-bad-ptr: exit(0)
+Differences in `diff -u' format:
+  (open-bad-ptr) begin
+- (open-bad-ptr) end
+- open-bad-ptr: exit(0)
+Acceptable output:
+  (open-bad-ptr) begin
+  open-bad-ptr: exit(-1)
+Differences in `diff -u' format:
+  (open-bad-ptr) begin
+- open-bad-ptr: exit(-1)

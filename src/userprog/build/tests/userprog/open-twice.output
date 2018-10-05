@@ -1,6 +1,6 @@
 Copying tests/userprog/open-twice to scratch partition...
 Copying ../../tests/userprog/sample.txt to scratch partition...
-Writing command line to /tmp/5AUfvfQrzK.dsk...
+Writing command line to /tmp/RFxDMmJ8k1.dsk...
 squish-pty bochs -q
 ========================================================================
                        Bochs x86 Emulator 2.5.1
@@ -22,16 +22,14 @@ Putting 'open-twice' into the file system...
 Putting 'sample.txt' into the file system...
 Erasing ustar archive...
 Executing 'open-twice':
-                                                                                                                                 ARGC:1 ARGV:bfffffec
-Argv[0] = bffffff5 pointing at open-twice
-                              system call!
-                                                                                                                                                                                                                                                                                                                                                     Execution of 'open-twice' complete.
-Timer: 491 ticks
-Thread: 30 idle ticks, 425 kernel ticks, 40 user ticks
+(open-twice) begin
+Execution of 'open-twice' complete.
+Timer: 371 ticks
+Thread: 30 idle ticks, 316 kernel ticks, 28 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 87 reads, 206 writes
 hd1:0: 99 reads, 2 writes
-Console: 1459 characters output
+Console: 902 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

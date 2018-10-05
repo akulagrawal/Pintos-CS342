@@ -1,5 +1,5 @@
 Copying tests/filesys/base/lg-full to scratch partition...
-Writing command line to /tmp/5zksOLEdUT.dsk...
+Writing command line to /tmp/wyqSPVWDFS.dsk...
 squish-pty bochs -q
 ========================================================================
                        Bochs x86 Emulator 2.5.1
@@ -20,16 +20,15 @@ Extracting ustar archive from scratch disk into file system...
 Putting 'lg-full' into the file system...
 Erasing ustar archive...
 Executing 'lg-full':
-                                                                                                                                                                                                                                                                                                                                           ARGC:1 ARGV:bffffff0
-Argv[0] = bffffff8 pointing at lg-full
-system call!
-                                                                                                                                                                         Execution of 'lg-full' complete.
-Timer: 529 ticks
-Thread: 30 idle ticks, 426 kernel ticks, 77 user ticks
+(lg-full) begin
+(lg-full) create "quux"
+Execution of 'lg-full' complete.
+Timer: 606 ticks
+Thread: 30 idle ticks, 318 kernel ticks, 261 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 60 reads, 206 writes
 hd1:0: 100 reads, 2 writes
-Console: 1400 characters output
+Console: 868 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

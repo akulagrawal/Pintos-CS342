@@ -1,5 +1,5 @@
 Copying tests/userprog/args-multiple to scratch partition...
-Writing command line to /tmp/9t2lVSnryJ.dsk...
+Writing command line to /tmp/JvJpxiIPTq.dsk...
 squish-pty bochs -q
 ========================================================================
                        Bochs x86 Emulator 2.5.1
@@ -20,20 +20,23 @@ Extracting ustar archive from scratch disk into file system...
 Putting 'args-multiple' into the file system...
 Erasing ustar archive...
 Executing 'args-multiple some arguments for you!':
-                                                                                                                                 ARGC:5 ARGV:bfffffc0
-Argv[0] = bffffff2 pointing at args-multiple
-Argv[1] = bfffffed pointing at some
-Argv[2] = bfffffe3 pointing at arguments
-Argv[3] = bfffffdf pointing at for
-Argv[4] = bfffffda pointing at you!
-                              system call!
-                                                                                                                                                                                                                                                                                                                                                     Execution of 'args-multiple' complete.
-Timer: 484 ticks
-Thread: 30 idle ticks, 393 kernel ticks, 64 user ticks
+(args) begin
+(args) argc = 5
+(args) argv[0] = 'args-multiple'
+(args) argv[1] = 'some'
+(args) argv[2] = 'arguments'
+(args) argv[3] = 'for'
+(args) argv[4] = 'you!'
+(args) argv[5] = null
+(args) end
+args-multiple: exit(0)
+Execution of 'args-multiple some arguments for you!' complete.
+Timer: 394 ticks
+Thread: 30 idle ticks, 294 kernel ticks, 73 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 59 reads, 196 writes
 hd1:0: 95 reads, 2 writes
-Console: 1627 characters output
+Console: 1142 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

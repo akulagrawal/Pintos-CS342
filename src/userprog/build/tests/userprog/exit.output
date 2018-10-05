@@ -1,5 +1,5 @@
 Copying tests/userprog/exit to scratch partition...
-Writing command line to /tmp/3WsLpr2sRk.dsk...
+Writing command line to /tmp/AgHz5CYzH3.dsk...
 squish-pty bochs -q
 ========================================================================
                        Bochs x86 Emulator 2.5.1
@@ -20,16 +20,15 @@ Extracting ustar archive from scratch disk into file system...
 Putting 'exit' into the file system...
 Erasing ustar archive...
 Executing 'exit':
-                                                                                                                                                                                                                        ARGC:1 ARGV:bffffff0
-Argv[0] = bffffffb pointing at exit
-system call!
-                                                                                                                                                                                                                                                                                            Execution of 'exit' complete.
-Timer: 455 ticks
-Thread: 30 idle ticks, 389 kernel ticks, 39 user ticks
+(exit) begin
+exit: exit(57)
+Execution of 'exit' complete.
+Timer: 342 ticks
+Thread: 30 idle ticks, 285 kernel ticks, 30 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 59 reads, 198 writes
 hd1:0: 96 reads, 2 writes
-Console: 1384 characters output
+Console: 842 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

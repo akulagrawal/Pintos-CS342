@@ -1,6 +1,6 @@
 Copying tests/userprog/exec-once to scratch partition...
 Copying tests/userprog/child-simple to scratch partition...
-Writing command line to /tmp/OTfyEukRYt.dsk...
+Writing command line to /tmp/6mQFDySuAz.dsk...
 squish-pty bochs -q
 ========================================================================
                        Bochs x86 Emulator 2.5.1
@@ -22,16 +22,14 @@ Putting 'exec-once' into the file system...
 Putting 'child-simple' into the file system...
 Erasing ustar archive...
 Executing 'exec-once':
-                                                                                                                             ARGC:1 ARGV:bfffffec
-Argv[0] = bffffff6 pointing at exec-once
-                                                                                                                           system call!
-                                                                                                                                                                                                                                                            Execution of 'exec-once' complete.
-Timer: 568 ticks
-Thread: 30 idle ticks, 502 kernel ticks, 39 user ticks
+(exec-once) begin
+Execution of 'exec-once' complete.
+Timer: 425 ticks
+Thread: 30 idle ticks, 370 kernel ticks, 28 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 86 reads, 388 writes
 hd1:0: 190 reads, 2 writes
-Console: 1457 characters output
+Console: 900 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

@@ -1,6 +1,6 @@
 Copying tests/userprog/close-twice to scratch partition...
 Copying ../../tests/userprog/sample.txt to scratch partition...
-Writing command line to /tmp/P8v80HL2K0.dsk...
+Writing command line to /tmp/l6frjVyx8H.dsk...
 squish-pty bochs -q
 ========================================================================
                        Bochs x86 Emulator 2.5.1
@@ -22,16 +22,15 @@ Putting 'close-twice' into the file system...
 Putting 'sample.txt' into the file system...
 Erasing ustar archive...
 Executing 'close-twice':
-                                                                                                                             ARGC:1 ARGV:bfffffec
-Argv[0] = bffffff4 pointing at close-twice
-                                                                                          system call!
-                                                                                                                                                                                                                                                                                             Execution of 'close-twice' complete.
-Timer: 493 ticks
-Thread: 30 idle ticks, 427 kernel ticks, 39 user ticks
+(close-twice) begin
+(close-twice) open "sample.txt"
+Execution of 'close-twice' complete.
+Timer: 378 ticks
+Thread: 30 idle ticks, 315 kernel ticks, 36 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 86 reads, 204 writes
 hd1:0: 98 reads, 2 writes
-Console: 1464 characters output
+Console: 939 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

@@ -1,5 +1,5 @@
 Copying tests/filesys/base/lg-create to scratch partition...
-Writing command line to /tmp/y0sW13SAQ1.dsk...
+Writing command line to /tmp/a4cWeyBMvr.dsk...
 squish-pty bochs -q
 ========================================================================
                        Bochs x86 Emulator 2.5.1
@@ -20,16 +20,15 @@ Extracting ustar archive from scratch disk into file system...
 Putting 'lg-create' into the file system...
 Erasing ustar archive...
 Executing 'lg-create':
-                                                                                                                                                                                                                                                       ARGC:1 ARGV:bfffffec
-Argv[0] = bffffff6 pointing at lg-create
-system call!
-                                                                                                                                                                                                                                                             Execution of 'lg-create' complete.
-Timer: 530 ticks
-Thread: 30 idle ticks, 427 kernel ticks, 76 user ticks
+(lg-create) begin
+(lg-create) create "blargle"
+Execution of 'lg-create' complete.
+Timer: 420 ticks
+Thread: 30 idle ticks, 322 kernel ticks, 71 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 60 reads, 206 writes
 hd1:0: 100 reads, 2 writes
-Console: 1410 characters output
+Console: 882 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

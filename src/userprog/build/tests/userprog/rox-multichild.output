@@ -1,6 +1,6 @@
 Copying tests/userprog/rox-multichild to scratch partition...
 Copying tests/userprog/child-rox to scratch partition...
-Writing command line to /tmp/pFu71oxIY7.dsk...
+Writing command line to /tmp/3hHdcSKBr4.dsk...
 squish-pty bochs -q
 ========================================================================
                        Bochs x86 Emulator 2.5.1
@@ -22,16 +22,15 @@ Putting 'rox-multichild' into the file system...
 Putting 'child-rox' into the file system...
 Erasing ustar archive...
 Executing 'rox-multichild':
-                                                                                                                                       ARGC:1 ARGV:bfffffe8
-Argv[0] = bffffff1 pointing at rox-multichild
-                                                                             system call!
-                                                                                                                                                                                                                                                                                                Execution of 'rox-multichild' complete.
-Timer: 584 ticks
-Thread: 30 idle ticks, 518 kernel ticks, 40 user ticks
+(rox-multichild) begin
+(rox-multichild) open "child-rox"
+Execution of 'rox-multichild' complete.
+Timer: 445 ticks
+Thread: 30 idle ticks, 382 kernel ticks, 36 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 87 reads, 418 writes
 hd1:0: 205 reads, 2 writes
-Console: 1479 characters output
+Console: 956 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

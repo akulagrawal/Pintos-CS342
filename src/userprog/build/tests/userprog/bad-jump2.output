@@ -1,5 +1,5 @@
 Copying tests/userprog/bad-jump2 to scratch partition...
-Writing command line to /tmp/v2uGkPuHst.dsk...
+Writing command line to /tmp/6siQT0rXlo.dsk...
 squish-pty bochs -q
 ========================================================================
                        Bochs x86 Emulator 2.5.1
@@ -20,16 +20,15 @@ Extracting ustar archive from scratch disk into file system...
 Putting 'bad-jump2' into the file system...
 Erasing ustar archive...
 Executing 'bad-jump2':
-                                                                                                                                                                                                   ARGC:1 ARGV:bfffffec
-Argv[0] = bffffff6 pointing at bad-jump2
-                                                                                                                           system call!
-                                                                                                                                                                                      Execution of 'bad-jump2' complete.
-Timer: 459 ticks
-Thread: 30 idle ticks, 393 kernel ticks, 39 user ticks
+(bad-jump2) begin
+bad-jump2: exit(-1)
+Execution of 'bad-jump2' complete.
+Timer: 347 ticks
+Thread: 30 idle ticks, 289 kernel ticks, 31 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 59 reads, 198 writes
 hd1:0: 96 reads, 2 writes
-Console: 1409 characters output
+Console: 872 characters output
 Keyboard: 0 keys pressed
-Exception: 0 page faults
+Exception: 1 page faults
 Powering off...

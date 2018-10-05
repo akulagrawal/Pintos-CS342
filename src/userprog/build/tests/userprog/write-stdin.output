@@ -1,5 +1,5 @@
 Copying tests/userprog/write-stdin to scratch partition...
-Writing command line to /tmp/ayaDg14CsZ.dsk...
+Writing command line to /tmp/bsbeQ3Ramq.dsk...
 squish-pty bochs -q
 ========================================================================
                        Bochs x86 Emulator 2.5.1
@@ -20,16 +20,16 @@ Extracting ustar archive from scratch disk into file system...
 Putting 'write-stdin' into the file system...
 Erasing ustar archive...
 Executing 'write-stdin':
-                                                                                                       ARGC:1 ARGV:bfffffec
-Argv[0] = bffffff4 pointing at write-stdin
-system call!
-                                                                                                                                                                                                                                                                                                                                                                                                             Execution of 'write-stdin' complete.
-Timer: 457 ticks
-Thread: 30 idle ticks, 390 kernel ticks, 40 user ticks
+(write-stdin) begin
+(write-stdin) end
+write-stdin: exit(0)
+Execution of 'write-stdin' complete.
+Timer: 351 ticks
+Thread: 30 idle ticks, 287 kernel ticks, 37 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 59 reads, 198 writes
 hd1:0: 96 reads, 2 writes
-Console: 1419 characters output
+Console: 901 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

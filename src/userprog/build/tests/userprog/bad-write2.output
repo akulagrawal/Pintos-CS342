@@ -1,5 +1,5 @@
 Copying tests/userprog/bad-write2 to scratch partition...
-Writing command line to /tmp/nCLL1CZpBV.dsk...
+Writing command line to /tmp/XpjwA2zacl.dsk...
 squish-pty bochs -q
 ========================================================================
                        Bochs x86 Emulator 2.5.1
@@ -20,16 +20,15 @@ Extracting ustar archive from scratch disk into file system...
 Putting 'bad-write2' into the file system...
 Erasing ustar archive...
 Executing 'bad-write2':
-                                                                                                        ARGC:1 ARGV:bfffffec
-Argv[0] = bffffff5 pointing at bad-write2
-system call!
-                                                                                                                                                                                                                                                                                                                                                                                                            Execution of 'bad-write2' complete.
-Timer: 457 ticks
-Thread: 30 idle ticks, 390 kernel ticks, 40 user ticks
+(bad-write2) begin
+bad-write2: exit(-1)
+Execution of 'bad-write2' complete.
+Timer: 346 ticks
+Thread: 30 idle ticks, 287 kernel ticks, 32 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 59 reads, 198 writes
 hd1:0: 96 reads, 2 writes
-Console: 1414 characters output
+Console: 878 characters output
 Keyboard: 0 keys pressed
-Exception: 0 page faults
+Exception: 1 page faults
 Powering off...

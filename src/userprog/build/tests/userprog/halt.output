@@ -1,5 +1,5 @@
 Copying tests/userprog/halt to scratch partition...
-Writing command line to /tmp/Ga0fZG10mY.dsk...
+Writing command line to /tmp/FAycgVnsPz.dsk...
 squish-pty bochs -q
 ========================================================================
                        Bochs x86 Emulator 2.5.1
@@ -20,16 +20,13 @@ Extracting ustar archive from scratch disk into file system...
 Putting 'halt' into the file system...
 Erasing ustar archive...
 Executing 'halt':
-                                                                                                                                                                                                                                        ARGC:1 ARGV:bffffff0
-Argv[0] = bffffffb pointing at halt
-                                                                             system call!
-                                                                                                                                                                                               Execution of 'halt' complete.
-Timer: 458 ticks
-Thread: 30 idle ticks, 391 kernel ticks, 40 user ticks
+(halt) begin
+Timer: 260 ticks
+Thread: 30 idle ticks, 201 kernel ticks, 32 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 59 reads, 198 writes
 hd1:0: 96 reads, 2 writes
-Console: 1384 characters output
+Console: 797 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

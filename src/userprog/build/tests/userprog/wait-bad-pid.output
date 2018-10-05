@@ -1,5 +1,5 @@
 Copying tests/userprog/wait-bad-pid to scratch partition...
-Writing command line to /tmp/pVPSGPraYs.dsk...
+Writing command line to /tmp/vzz1F7mkR9.dsk...
 squish-pty bochs -q
 ========================================================================
                        Bochs x86 Emulator 2.5.1
@@ -20,16 +20,14 @@ Extracting ustar archive from scratch disk into file system...
 Putting 'wait-bad-pid' into the file system...
 Erasing ustar archive...
 Executing 'wait-bad-pid':
-                                                                                                                     ARGC:1 ARGV:bfffffe8
-Argv[0] = bffffff3 pointing at wait-bad-pid
-                                                              system call!
-                                                                                                                                                                                                                                                                                                                                 Execution of 'wait-bad-pid' complete.
-Timer: 458 ticks
-Thread: 30 idle ticks, 392 kernel ticks, 39 user ticks
+(wait-bad-pid) begin
+Execution of 'wait-bad-pid' complete.
+Timer: 344 ticks
+Thread: 30 idle ticks, 289 kernel ticks, 28 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 59 reads, 198 writes
 hd1:0: 96 reads, 2 writes
-Console: 1424 characters output
+Console: 867 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

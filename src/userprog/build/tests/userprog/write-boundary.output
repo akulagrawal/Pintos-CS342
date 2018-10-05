@@ -1,6 +1,6 @@
 Copying tests/userprog/write-boundary to scratch partition...
 Copying ../../tests/userprog/sample.txt to scratch partition...
-Writing command line to /tmp/i0jw6CugEH.dsk...
+Writing command line to /tmp/gvqLFzVUJ7.dsk...
 squish-pty bochs -q
 ========================================================================
                        Bochs x86 Emulator 2.5.1
@@ -22,16 +22,15 @@ Putting 'write-boundary' into the file system...
 Putting 'sample.txt' into the file system...
 Erasing ustar archive...
 Executing 'write-boundary':
-                                                                                                                                                                            ARGC:1 ARGV:bfffffe8
-Argv[0] = bffffff1 pointing at write-boundary
-                                                             system call!
-                                                                                                                                                                                                                                                                           Execution of 'write-boundary' complete.
-Timer: 506 ticks
-Thread: 30 idle ticks, 434 kernel ticks, 45 user ticks
+(write-boundary) begin
+(write-boundary) open "sample.txt"
+Execution of 'write-boundary' complete.
+Timer: 392 ticks
+Thread: 30 idle ticks, 323 kernel ticks, 42 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 94 reads, 212 writes
 hd1:0: 102 reads, 2 writes
-Console: 1480 characters output
+Console: 958 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

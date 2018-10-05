@@ -1,5 +1,5 @@
 Copying tests/userprog/read-bad-fd to scratch partition...
-Writing command line to /tmp/KYBiyJnclt.dsk...
+Writing command line to /tmp/H909wf9cJ2.dsk...
 squish-pty bochs -q
 ========================================================================
                        Bochs x86 Emulator 2.5.1
@@ -20,16 +20,14 @@ Extracting ustar archive from scratch disk into file system...
 Putting 'read-bad-fd' into the file system...
 Erasing ustar archive...
 Executing 'read-bad-fd':
-                                                                                                                                                                 ARGC:1 ARGV:bfffffec
-Argv[0] = bffffff4 pointing at read-bad-fd
-                                                                                                                                          system call!
-                                                                                                                                                                                                         Execution of 'read-bad-fd' complete.
-Timer: 460 ticks
-Thread: 30 idle ticks, 394 kernel ticks, 39 user ticks
+(read-bad-fd) begin
+Execution of 'read-bad-fd' complete.
+Timer: 343 ticks
+Thread: 30 idle ticks, 287 kernel ticks, 29 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 59 reads, 198 writes
 hd1:0: 96 reads, 2 writes
-Console: 1419 characters output
+Console: 862 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

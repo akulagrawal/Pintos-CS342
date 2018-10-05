@@ -1,7 +1,7 @@
 Copying tests/userprog/multi-child-fd to scratch partition...
 Copying ../../tests/userprog/sample.txt to scratch partition...
 Copying tests/userprog/child-close to scratch partition...
-Writing command line to /tmp/L5PVh6xwCB.dsk...
+Writing command line to /tmp/lBg3WzyY3A.dsk...
 squish-pty bochs -q
 ========================================================================
                        Bochs x86 Emulator 2.5.1
@@ -24,16 +24,15 @@ Putting 'sample.txt' into the file system...
 Putting 'child-close' into the file system...
 Erasing ustar archive...
 Executing 'multi-child-fd':
-                                                                                                                                 ARGC:1 ARGV:bfffffe8
-Argv[0] = bffffff1 pointing at multi-child-fd
-                               system call!
-                                                                                                                                                                                                                                                                                                                                                    Execution of 'multi-child-fd' complete.
-Timer: 618 ticks
-Thread: 30 idle ticks, 549 kernel ticks, 42 user ticks
+(multi-child-fd) begin
+(multi-child-fd) open "sample.txt"
+Execution of 'multi-child-fd' complete.
+Timer: 473 ticks
+Thread: 30 idle ticks, 410 kernel ticks, 36 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 123 reads, 422 writes
 hd1:0: 206 reads, 2 writes
-Console: 1527 characters output
+Console: 1005 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

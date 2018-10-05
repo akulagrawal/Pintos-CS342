@@ -1,6 +1,6 @@
 Copying tests/filesys/base/syn-read to scratch partition...
 Copying tests/filesys/base/child-syn-read to scratch partition...
-Writing command line to /tmp/bqoLmrZesn.dsk...
+Writing command line to /tmp/8BhBSZNumq.dsk...
 squish-pty bochs -q
 ========================================================================
                        Bochs x86 Emulator 2.5.1
@@ -22,16 +22,15 @@ Putting 'syn-read' into the file system...
 Putting 'child-syn-read' into the file system...
 Erasing ustar archive...
 Executing 'syn-read':
-                                                                                                        ARGC:1 ARGV:bfffffec
-Argv[0] = bffffff7 pointing at syn-read
-system call!
-                                                                                                                                                                                                                                                                                                                                                                                                            Execution of 'syn-read' complete.
-Timer: 585 ticks
-Thread: 30 idle ticks, 518 kernel ticks, 40 user ticks
+(syn-read) begin
+(syn-read) create "data"
+Execution of 'syn-read' complete.
+Timer: 444 ticks
+Thread: 30 idle ticks, 384 kernel ticks, 34 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 88 reads, 430 writes
 hd1:0: 211 reads, 2 writes
-Console: 1454 characters output
+Console: 922 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...
