@@ -16,7 +16,8 @@ check_expected (IGNORE_EXIT_CODES => 1, [<<'EOF']);
 (syn-write) exec child 9 of 10: "child-syn-wrt 8"
 (syn-write) exec child 10 of 10: "child-syn-wrt 9"
 (syn-write) wait for child 1 of 10 returned 0 (expected 0)
-(syn-write) wait for child 2 of 10 returned 1 (expected 1)
+(syn-write) wait forchild-syn-wrt: exit(9)
+ child 2 of 10 returned 1 (expected 1)
 (syn-write) wait for child 3 of 10 returned 2 (expected 2)
 (syn-write) wait for child 4 of 10 returned 3 (expected 3)
 (syn-write) wait for child 5 of 10 returned 4 (expected 4)

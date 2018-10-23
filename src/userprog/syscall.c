@@ -6,6 +6,7 @@
 #include "threads/vaddr.h"
 #include "threads/synch.h"
 #include "userprog/pagedir.h"
+#include "userprog/process.h" 
 #include <string.h>
 
 static void syscall_handler (struct intr_frame *);
@@ -59,10 +60,20 @@ exit (void *esp)
 	char *saveptr;
 
 	/* Get the first word before a space by tokenizing. */
-  name = strtok_r (name, " ", &saveptr);
-  
+  name = strtok_r (name, " ", &saveptr);  
   printf ("%s: exit(%d)\n", name, status);
-  thread_exit();
+
+	t->return_status = status;
+	
+	process_exit ();
+	enum intr_level old_level = intr_disable ();
+  t->no_yield = true;
+  sema_up (&t->sema_terminated);
+  thread_block ();
+  intr_set_level (old_level);
+  
+	thread_exit();
+  NOT_REACHED (); 
 }
 
 static int
@@ -291,18 +302,50 @@ thread_close_file (int fd)
 static int
 exec (void *esp)
 {
-  /* In case of bad ptr exit process. 
-  Further implementation in upcoming exercises. */
-  exit (NULL);
+	validate_range (esp, sizeof (char *));
+  /* Obtain file descriptor */  
+  const char *fd = *((char **) esp);
+	esp += sizeof (char *);
+
+	validate_string (fd);
+	
+	lock_acquire (&fs_lock);
+  tid_t tid = process_execute (fd);
+  lock_release (&fs_lock);
+  
+  /* Get child thread with id = tid */  
+  struct thread *child = get_thread (tid);
+  if (child == NULL)
+    return -1;
+  
+  sema_down (&child->sema_ready);
+  if (!child->load_complete)
+    tid = -1;
+  
+  sema_up (&child->sema_ack);
+	// Return thread Id
+  return tid;
 }
 
 static int
 wait (void *esp)
 {
-  /* In case of bad PID exit process. 
-  Further implementation in upcoming exercises. */
-  
-  exit (NULL);
+  validate_range (esp, sizeof (int));
+  /* Obtain thread Id */  
+  int pid = *((int *) esp);
+  esp += sizeof (int);
+
+  /* Get child thread with id = pid */  
+	struct thread *child = get_thread (pid);
+  if (child == NULL) 
+  	return -1; 
+    
+  sema_down (&child->sema_terminated);
+  int status = child->return_status;
+  list_remove (&child->parent_elem);
+  thread_unblock (child);
+	// Return status
+  return status;
 }
 
 static int

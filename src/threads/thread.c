@@ -187,7 +187,7 @@ thread_tick (void)
     intr_yield_on_return ();
   }
 
-  if ((schedule_sec || schedule_slice)
+  if ((schedule_sec || schedule_slice) && thread_mlfqs
       && bsd_scheduler_thread->status == THREAD_BLOCKED)
     thread_unblock (bsd_scheduler_thread);
 }
@@ -264,7 +264,7 @@ thread_create (const char *name, int priority,
   
   /* We should yield to the added thread if it has a higher priority than
      the current thread.*/
-  thread_yield ();
+	check_intr_context ();
 
   return tid;
 }
@@ -535,7 +535,7 @@ thread_set_priority (int new_priority)
      own priority decreases. */
   t->priority = new_priority;
   if(new_priority < cur_priority)
-    thread_yield ();
+		check_intr_context ();
 }
 
 /* Returns the current thread's effective priority. */
@@ -549,7 +549,7 @@ thread_get_priority (void)
 int
 thread_get_effective_priority (struct thread *t)
 {
-  if(!list_empty (&t->locks_acquired))
+  if(!list_empty (&t->locks_acquired) && !thread_mlfqs)
   {
     int max_priority = t->priority;
     struct list_elem *e;
@@ -588,7 +588,8 @@ thread_update_priority (struct thread *t)
 {
   enum intr_level old_level = intr_disable ();
   int aux = _ADD_INT (_DIVIDE_INT (t->recent_cpu, 4), 2*t->nice);
-  t->priority = _TO_INT_ZERO (_INT_SUB (PRI_MAX, aux));
+	int val = _TO_INT_ZERO (_INT_SUB (PRI_MAX, aux));
+  t->priority = val > PRI_MAX ? PRI_MAX : val < PRI_MIN ? PRI_MIN : val;
   intr_set_level (old_level);
 }
 
@@ -640,7 +641,7 @@ thread_set_nice (int nice UNUSED)
   t->nice = nice;
   thread_update_priority (t);
   /* If due to nice value change the priority decreases then it must yield. */
-  thread_yield (); 
+  check_intr_context ();
 }
 
 /* Returns the current thread's nice value. */
@@ -854,12 +855,31 @@ init_thread (struct thread *t, const char *name, int priority)
   t->magic = THREAD_MAGIC;
   list_init (&t->locks_acquired);
   list_push_back (&all_list, &t->allelem);
-
+	
+	t->executable_file = NULL;
   int i;
   for(i = 0; i < MAX_FILES; ++i)
   {
     t -> files[i] = NULL;
   }
+
+	// Set parent ptr to current thread
+	// Initialize children list & push to parent list
+  if (t != initial_thread)
+  {
+    t->parent = thread_current();
+    list_push_back (&(t->parent->children), &t->parent_elem);
+  }
+  else
+    t->parent = NULL;
+  
+  list_init (&t->children);
+
+  sema_init (&t->sema_ready, 0);
+  sema_init (&t->sema_terminated, 0);
+  sema_init (&t->sema_ack, 0);
+  t->return_status = -1;
+  t->load_complete = false;
 }
 
 /* Allocates a SIZE-byte frame at the top of thread T's stack and
@@ -979,3 +999,31 @@ allocate_tid (void)
 /* Offset of `stack' member within `struct thread'.
    Used by switch.S, which can't figure it out on its own. */
 uint32_t thread_stack_ofs = offsetof (struct thread, stack);
+
+/* Returns a pointer to the child thread with id tid. */
+struct thread *
+get_thread (int tid)
+{
+	struct thread * t = thread_current();
+  struct thread * child = NULL;
+  struct list_elem *e;
+	for (e = list_begin (&t->children); e!= list_end (&t->children); e = list_next (e))
+  {
+		struct thread * curr = list_entry (e, struct thread, parent_elem);
+    if (curr -> tid == tid)
+    {
+      child = curr;
+      break;
+    }
+  }
+
+  return child;
+}
+
+void check_intr_context ()
+{
+    if (intr_context ())
+      intr_yield_on_return ();
+    else
+      thread_yield ();
+}

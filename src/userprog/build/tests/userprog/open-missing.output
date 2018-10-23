@@ -1,5 +1,5 @@
 Copying tests/userprog/open-missing to scratch partition...
-Writing command line to /tmp/3F98V1NHhu.dsk...
+Writing command line to /tmp/uDdHotjvHO.dsk...
 squish-pty bochs -q
 ========================================================================
                        Bochs x86 Emulator 2.5.1
@@ -24,8 +24,8 @@ Executing 'open-missing':
 (open-missing) end
 open-missing: exit(0)
 Execution of 'open-missing' complete.
-Timer: 364 ticks
-Thread: 30 idle ticks, 288 kernel ticks, 49 user ticks
+Timer: 304 ticks
+Thread: 30 idle ticks, 230 kernel ticks, 47 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 76 reads, 198 writes
 hd1:0: 96 reads, 2 writes

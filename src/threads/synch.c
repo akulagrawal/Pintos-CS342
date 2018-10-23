@@ -137,7 +137,7 @@ sema_up (struct semaphore *sema)
   if (t == NULL || cur->no_yield == true)
       cur->no_yield = false;
   else
-    thread_yield();
+		check_intr_context ();
 }
 
 static void sema_test_helper (void *sema_);

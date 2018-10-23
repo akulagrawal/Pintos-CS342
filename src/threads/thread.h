@@ -4,6 +4,7 @@
 #include <debug.h>
 #include <list.h>
 #include <stdint.h>
+#include "threads/synch.h" 
 
 /* States in a thread's life cycle. */
 enum thread_status
@@ -25,6 +26,7 @@ typedef int tid_t;
 #define PRI_MAX 63                      /* Highest priority. */
 
 #define MAX_FILES 128
+#define MAX_CHILDREN 128
 
 /* A kernel thread or user process.
 
@@ -99,8 +101,8 @@ struct thread
 
     /* Shared between thread.c and synch.c. */
     struct list_elem elem;              /* List element. */
-
     struct list_elem sleepers_elem;     /* List element for sleepers_list. */
+
 #ifdef USERPROG
     /* Owned by userprog/process.c. */
     uint32_t *pagedir;                  /* Page directory. */
@@ -109,9 +111,23 @@ struct thread
     /* Owned by thread.c. */
     unsigned magic;                     /* Detects stack overflow. */
     struct list locks_acquired;         /* List of locks acquired by a thread */
+		
     bool no_yield;
 
-    struct file * files[MAX_FILES]; 
+		/* Files held by the thread. */
+		struct file * executable_file;
+    struct file * files[MAX_FILES];
+
+		/* Children of the this thread. */
+		struct list_elem parent_elem;
+		struct list children;
+		struct thread * parent;
+
+    struct semaphore sema_ready;
+    struct semaphore sema_terminated;
+    struct semaphore sema_ack;
+    int return_status;
+    bool load_complete;
 };
 
 /* If false (default), use round-robin scheduler.
@@ -164,4 +180,6 @@ bool before (const struct list_elem*, const struct list_elem*, void*);
 void thread_priority_temporarily_up (void);
 void thread_priority_restore (void);
 
+struct thread * get_thread (int); 
+void check_intr_context ();
 #endif /* threads/thread.h */

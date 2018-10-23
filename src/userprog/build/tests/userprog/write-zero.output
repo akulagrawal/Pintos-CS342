@@ -1,6 +1,6 @@
 Copying tests/userprog/write-zero to scratch partition...
 Copying ../../tests/userprog/sample.txt to scratch partition...
-Writing command line to /tmp/qKrJBnaaMZ.dsk...
+Writing command line to /tmp/sejqOaepHV.dsk...
 squish-pty bochs -q
 ========================================================================
                        Bochs x86 Emulator 2.5.1
@@ -27,10 +27,10 @@ Executing 'write-zero':
 (write-zero) end
 write-zero: exit(0)
 Execution of 'write-zero' complete.
-Timer: 390 ticks
-Thread: 30 idle ticks, 316 kernel ticks, 47 user ticks
+Timer: 331 ticks
+Thread: 30 idle ticks, 256 kernel ticks, 48 user ticks
 hd0:0: 0 reads, 0 writes
-hd0:1: 89 reads, 204 writes
+hd0:1: 90 reads, 204 writes
 hd1:0: 98 reads, 2 writes
 Console: 970 characters output
 Keyboard: 0 keys pressed

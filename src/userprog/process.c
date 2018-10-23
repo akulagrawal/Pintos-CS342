@@ -79,8 +79,24 @@ start_process (void *file_name_)
 
   /* If load failed, quit. */
   palloc_free_page (file_name);
+
+	struct thread *cur = thread_current ();
   if (!success) 
+	{
+		sema_up (&cur->sema_ready);
+    sema_down (&cur->sema_ack);
+
+    enum intr_level old_level = intr_disable ();
+    cur->no_yield = true;
+    sema_up (&cur->sema_terminated);
+    thread_block ();
+
+    intr_set_level (old_level);
     thread_exit ();
+	}
+
+	cur->load_complete = true;
+  sema_up (&cur->sema_ready);
 
   /* Start the user process by simulating a return from an
      interrupt, implemented by intr_exit (in
@@ -104,12 +120,21 @@ start_process (void *file_name_)
 int
 process_wait (tid_t child_tid UNUSED) 
 {
-  int i;
-  for (i = 0; i< 1000; i++)
-  {
-    thread_yield ();
-  }
-  return -1;
+	// Get child thread of current running thread with tid 'child_tid'
+	struct thread *child = get_thread (child_tid);  
+
+	// Check if child is valid
+	if (child == NULL)
+		return -1;
+
+	// Acquire lock
+	sema_down (&child->sema_terminated);
+  int status = child->return_status;
+  list_remove (&child->parent_elem);
+  thread_unblock (child);
+
+	// Return the status
+  return status;
 }
 
 /* Free the current process's resources. */
@@ -122,6 +147,13 @@ process_exit (void)
   /* Destroy the current process's page directory and switch back
      to the kernel-only page directory. */
   pd = cur->pagedir;
+
+  if (cur->executable_file)
+  {
+    file_close (cur->executable_file);
+    cur->executable_file = NULL;
+  }
+
   if (pd != NULL) 
     {
       /* Correct ordering here is crucial.  We must set
@@ -254,7 +286,9 @@ load (const char *cmd_line_input, void (**eip) (void), void **esp)
       printf ("load: %s: open failed\n", file_name);
       goto done; 
     }
-
+	
+	file_deny_write (file);
+  t->executable_file = file;
   /* Read and verify executable header. */
   if (file_read (file, &ehdr, sizeof ehdr) != sizeof ehdr
       || memcmp (ehdr.e_ident, "\177ELF\1\1\1", 7)
@@ -340,7 +374,6 @@ load (const char *cmd_line_input, void (**eip) (void), void **esp)
   success = true;
 done:
   /* We arrive here whether the load is successful or not. */
-  file_close (file);
   return success;
 }
 
