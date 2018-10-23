@@ -21,6 +21,7 @@ Differences in `diff -u' format:
 - (multi-child-fd) verified contents of "sample.txt"
 - (multi-child-fd) end
 - multi-child-fd: exit(0)
++ multi-child-fd: exit(-1)
 Acceptable output:
   (multi-child-fd) begin
   (multi-child-fd) open "sample.txt"
@@ -39,3 +40,4 @@ Differences in `diff -u' format:
 - (multi-child-fd) verified contents of "sample.txt"
 - (multi-child-fd) end
 - multi-child-fd: exit(0)
++ multi-child-fd: exit(-1)

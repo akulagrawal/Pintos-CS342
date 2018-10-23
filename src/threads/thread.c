@@ -844,18 +844,22 @@ init_thread (struct thread *t, const char *name, int priority)
   t->old_priority = priority;
   t->no_yield = false;
   t->wakeup_at = -1;
-  /* t->wakeup's initial value is never used, since whenever the thread will 
-     call timer_sleep this variable will be changes and it is never used
-     before that */
-  /* Might need to change this. (t->nice)*/
+  
   if (t == initial_thread)
     t->nice= 0;
   else
     t->nice = thread_current ()->nice;
+
   t->recent_cpu = 0;
   t->magic = THREAD_MAGIC;
   list_init (&t->locks_acquired);
   list_push_back (&all_list, &t->allelem);
+
+  int i;
+  for(i = 0; i < MAX_FILES; ++i)
+  {
+    t -> files[i] = NULL;
+  }
 }
 
 /* Allocates a SIZE-byte frame at the top of thread T's stack and

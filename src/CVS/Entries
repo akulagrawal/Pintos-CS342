@@ -1,4 +1,15 @@
-D/bochs////
+/.cvsignore/1.1.1.1/Thu Aug  9 06:20:55 2018//D2018.10.10.18.30.00
+/LICENSE/1.1.1.1/Thu Aug  9 06:20:55 2018//D2018.10.10.18.30.00
+/Make.config/1.1.1.1/Thu Aug  9 06:20:55 2018//D2018.10.10.18.30.00
+/Makefile/1.1.1.1/Thu Aug  9 06:20:55 2018//D2018.10.10.18.30.00
+/Makefile.build/1.1.1.1/Thu Aug  9 06:20:55 2018//D2018.10.10.18.30.00
+/Makefile.kernel/1.1.1.1/Thu Aug  9 06:20:55 2018//D2018.10.10.18.30.00
+/Makefile.userprog/1.1.1.1/Thu Aug  9 06:20:55 2018//D2018.10.10.18.30.00
+/bochsout.txt/1.1/Wed Sep 12 17:51:42 2018//D2018.10.10.18.30.00
+/bochsrc.txt/1.1/Wed Sep 12 17:51:45 2018//D2018.10.10.18.30.00
+/cscope.in.out/1.1/Mon Aug 27 19:59:15 2018//D2018.10.10.18.30.00
+/cscope.out/1.1/Mon Aug 27 19:59:15 2018//D2018.10.10.18.30.00
+/cscope.po.out/1.1/Mon Aug 27 19:59:15 2018//D2018.10.10.18.30.00
 D/devices////
 D/examples////
 D/filesys////
@@ -9,16 +20,3 @@ D/threads////
 D/userprog////
 D/utils////
 D/vm////
-D/vmware////
-/.cvsignore/1.1.1.1/Tue Oct  2 12:45:22 2018//
-/LICENSE/1.1.1.1/Tue Oct  2 12:45:22 2018//
-/Make.config/1.1.1.1/Tue Oct  2 12:44:39 2018//
-/Makefile/1.1.1.1/Tue Oct  2 12:45:21 2018//
-/Makefile.build/1.1.1.1/Tue Oct  2 12:42:11 2018//
-/Makefile.kernel/1.1.1.1/Tue Oct  2 12:40:21 2018//
-/Makefile.userprog/1.1.1.1/Tue Oct  2 12:45:57 2018//
-/bochsout.txt/1.1/Tue Oct  2 12:44:39 2018//
-/bochsrc.txt/1.1/Tue Oct  2 12:45:15 2018//
-/cscope.in.out/1.1/Tue Oct  2 12:45:21 2018//
-/cscope.out/1.1/Tue Oct  2 12:42:10 2018//
-/cscope.po.out/1.1/Tue Oct  2 12:45:21 2018//

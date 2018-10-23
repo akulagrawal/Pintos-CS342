@@ -42,9 +42,9 @@ Acceptable output:
 Differences in `diff -u' format:
   (rox-multichild) begin
   (rox-multichild) open "child-rox"
-- (rox-multichild) read "child-rox"
-- (rox-multichild) write "child-rox"
-- (rox-multichild) exec "child-rox 5"
+  (rox-multichild) read "child-rox"
+  (rox-multichild) write "child-rox"
+  (rox-multichild) exec "child-rox 5"
 - (child-rox) begin
 - (child-rox) try to write "child-rox"
 - (child-rox) exec "child-rox 4"
@@ -77,3 +77,4 @@ Differences in `diff -u' format:
 - (rox-multichild) write "child-rox"
 - (rox-multichild) end
 - rox-multichild: exit(0)
++ rox-multichild: exit(-1)

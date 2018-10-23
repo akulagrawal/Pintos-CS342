@@ -105,7 +105,7 @@ int
 process_wait (tid_t child_tid UNUSED) 
 {
   int i;
-  for (i = 0; i< 1<<10; i++)
+  for (i = 0; i< 1000; i++)
   {
     thread_yield ();
   }
@@ -467,7 +467,7 @@ setup_stack (void **esp, char *file_name, char *args)
       if (success){
         *esp = PHYS_BASE;
 
-        /* Tokenize the string using space as a delimiter. */
+        /* Tokenize the string using space as a delimiter */
         char *token, *save_ptr;
         int argc = 1;
         char *argv[LOADER_ARGS_LEN / 2 + 1];
@@ -502,7 +502,7 @@ setup_stack (void **esp, char *file_name, char *args)
         *esp -= s;
         memcpy (*esp, nulls, s);
 
-        /* Push addresses of argv array. */
+        /* Push addresses of argv array */
         for (i = argc; i>=0; i--)
         {
           s = (sizeof (char *));
@@ -510,18 +510,18 @@ setup_stack (void **esp, char *file_name, char *args)
           memcpy (*esp, addr + i, s);
         }
 
-        /* Push argv start address. */
+        /* Push argv start address */
         char *argv_starting = *esp; 
         s = sizeof (argv_starting);
         *esp -= s;
         memcpy(*esp, &argv_starting, s);
 
-        /* Push argc. */
+        /* Push argc */
         s = sizeof (int);
         *esp -= s;
         memcpy (*esp, &argc, s);
 
-        /* Push fake return address (0). */
+        /* Push fake return address (0) */
         argc = 0;
         s = sizeof (void (*) ());
         *esp -= s;

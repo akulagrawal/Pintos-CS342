@@ -1,5 +1,5 @@
 Copying tests/filesys/base/syn-remove to scratch partition...
-Writing command line to /tmp/Ef1xccExgH.dsk...
+Writing command line to /tmp/jM67czib66.dsk...
 squish-pty bochs -q
 ========================================================================
                        Bochs x86 Emulator 2.5.1
@@ -22,13 +22,21 @@ Erasing ustar archive...
 Executing 'syn-remove':
 (syn-remove) begin
 (syn-remove) create "deleteme"
+(syn-remove) open "deleteme"
+(syn-remove) remove "deleteme"
+(syn-remove) write "deleteme"
+(syn-remove) seek "deleteme" to 0
+(syn-remove) read "deleteme"
+(syn-remove) close "deleteme"
+(syn-remove) end
+syn-remove: exit(0)
 Execution of 'syn-remove' complete.
-Timer: 352 ticks
-Thread: 30 idle ticks, 290 kernel ticks, 35 user ticks
+Timer: 435 ticks
+Thread: 30 idle ticks, 289 kernel ticks, 119 user ticks
 hd0:0: 0 reads, 0 writes
-hd0:1: 61 reads, 208 writes
+hd0:1: 97 reads, 221 writes
 hd1:0: 101 reads, 2 writes
-Console: 889 characters output
+Console: 1110 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

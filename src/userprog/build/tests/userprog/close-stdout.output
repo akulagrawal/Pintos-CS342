@@ -1,5 +1,5 @@
 Copying tests/userprog/close-stdout to scratch partition...
-Writing command line to /tmp/6zXk3BhZWa.dsk...
+Writing command line to /tmp/AcHZp0xvSl.dsk...
 squish-pty bochs -q
 ========================================================================
                        Bochs x86 Emulator 2.5.1
@@ -21,13 +21,15 @@ Putting 'close-stdout' into the file system...
 Erasing ustar archive...
 Executing 'close-stdout':
 (close-stdout) begin
+(close-stdout) end
+close-stdout: exit(0)
 Execution of 'close-stdout' complete.
-Timer: 344 ticks
-Thread: 30 idle ticks, 289 kernel ticks, 28 user ticks
+Timer: 353 ticks
+Thread: 30 idle ticks, 289 kernel ticks, 37 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 59 reads, 198 writes
 hd1:0: 96 reads, 2 writes
-Console: 867 characters output
+Console: 908 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

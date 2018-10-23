@@ -1,5 +1,5 @@
 Copying tests/userprog/close-stdin to scratch partition...
-Writing command line to /tmp/7cxV2D0ffS.dsk...
+Writing command line to /tmp/DqUoRAVZW4.dsk...
 squish-pty bochs -q
 ========================================================================
                        Bochs x86 Emulator 2.5.1
@@ -21,13 +21,15 @@ Putting 'close-stdin' into the file system...
 Erasing ustar archive...
 Executing 'close-stdin':
 (close-stdin) begin
+(close-stdin) end
+close-stdin: exit(0)
 Execution of 'close-stdin' complete.
-Timer: 343 ticks
-Thread: 30 idle ticks, 287 kernel ticks, 29 user ticks
+Timer: 352 ticks
+Thread: 30 idle ticks, 288 kernel ticks, 37 user ticks
 hd0:0: 0 reads, 0 writes
 hd0:1: 59 reads, 198 writes
 hd1:0: 96 reads, 2 writes
-Console: 862 characters output
+Console: 901 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...

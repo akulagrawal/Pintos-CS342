@@ -1,5 +1,5 @@
 Copying tests/userprog/create-empty to scratch partition...
-Writing command line to /tmp/ZKTJoEWGwO.dsk...
+Writing command line to /tmp/OVi0UXs5dD.dsk...
 squish-pty bochs -q
 ========================================================================
                        Bochs x86 Emulator 2.5.1
@@ -21,13 +21,16 @@ Putting 'create-empty' into the file system...
 Erasing ustar archive...
 Executing 'create-empty':
 (create-empty) begin
+(create-empty) create(""): 0
+(create-empty) end
+create-empty: exit(0)
 Execution of 'create-empty' complete.
-Timer: 344 ticks
-Thread: 30 idle ticks, 289 kernel ticks, 28 user ticks
+Timer: 365 ticks
+Thread: 30 idle ticks, 288 kernel ticks, 50 user ticks
 hd0:0: 0 reads, 0 writes
-hd0:1: 59 reads, 198 writes
+hd0:1: 63 reads, 202 writes
 hd1:0: 96 reads, 2 writes
-Console: 867 characters output
+Console: 937 characters output
 Keyboard: 0 keys pressed
 Exception: 0 page faults
 Powering off...
